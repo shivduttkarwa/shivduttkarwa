@@ -318,8 +318,7 @@
     const hero = $('.hero');
     if (!hero) return;
     const st = () => ({ trigger: hero, start: 'top top', end: 'bottom top', scrub: true });
-    gsap.to('.hero__title', { yPercent: 22, ease: 'none', scrollTrigger: st() });
-    gsap.to('.hero__card-wrap', { y: -90, ease: 'none', scrollTrigger: st() });
+    gsap.to('.hero__title', { yPercent: 12, ease: 'none', scrollTrigger: st() });
     gsap.to('.hero__bg', { yPercent: 30, ease: 'none', scrollTrigger: st() });
 
     if (!finePointer) return;
@@ -363,7 +362,10 @@
         lenis?.start();
         onReveal();
       }, 2.45)
-      .add(() => root.classList.add('is-loaded'));
+      .add(() => {
+        root.classList.add('is-loaded');
+        ScrollTrigger.refresh();
+      });
 
     const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
     Promise.race([fontsReady, new Promise((r) => setTimeout(r, 2000))]).then(() => tl.play());
@@ -429,7 +431,7 @@
   }
 
   function initServices(mm) {
-    mm.add('(min-width: 768px)', () => {
+    mm.add('(min-width: 768px) and (min-height: 700px)', () => {
       const cards = $$('.service');
       const navH = () => parseFloat(getComputedStyle(root).getPropertyValue('--nav-h')) || 76;
       cards.forEach((card, i) => {
@@ -457,9 +459,9 @@
     const bar = $('.work__progress-bar');
     if (!section || !track) return;
 
-    mm.add('(min-width: 992px)', () => {
+    mm.add('(min-width: 992px) and (min-height: 600px) and (orientation: landscape)', () => {
       root.classList.add('has-hscroll');
-      const distance = () => Math.max(0, track.scrollWidth - window.innerWidth);
+      const distance = () => Math.max(0, track.scrollWidth - track.parentElement.clientWidth);
 
       const tween = gsap.to(track, {
         x: () => -distance(),
