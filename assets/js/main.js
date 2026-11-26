@@ -603,6 +603,14 @@
     });
   }
 
+  function initProjectImages() {
+    $$('.project__img').forEach((img) => {
+      const hide = () => img.classList.add('is-missing');
+      if (img.complete && !img.naturalWidth) hide();
+      else img.addEventListener('error', hide, { once: true });
+    });
+  }
+
   function initForm() {
     const form = $('[data-form]');
     if (!form) return;
@@ -658,6 +666,7 @@
     initNav();
     initCopy();
     initForm();
+    initProjectImages();
     initMarquee();
 
     if (!animate) {
