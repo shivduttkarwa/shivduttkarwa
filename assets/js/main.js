@@ -310,8 +310,59 @@
       .from('.hero__grid', { autoAlpha: 0, duration: 1.8, ease: 'power1.out' }, 0.1)
       .from('.hero__badge', { scale: 0, rotate: -140, duration: 1.6 }, 0.45)
       .from('[data-hero-fade]', { y: 30, autoAlpha: 0, duration: 1.3, stagger: 0.08 }, 0.5)
-      .from('.code-card', { y: 80, autoAlpha: 0, rotate: 3, duration: 1.5 }, 0.65)
-      .from('.code-card .ln', { autoAlpha: 0, x: -12, duration: 0.7, stagger: 0.07, ease: 'power3.out' }, 0.95);
+      .fromTo(
+        '.hero__pill',
+        { clipPath: 'inset(0% 100% 0% 0% round 999px)' },
+        { clipPath: 'inset(0% 0% 0% 0% round 999px)', duration: 1.4, ease: 'expo.inOut' },
+        0.35
+      )
+      .from('.hero__pill img', { scale: 1.5, duration: 2, ease: 'expo.out' }, 0.45);
+  }
+
+  function initVisuals() {
+    const media = $('.about__media');
+    if (media) {
+      const r = () => getComputedStyle(media).borderTopLeftRadius;
+      gsap.fromTo(
+        media,
+        { clipPath: () => `inset(10% 6% 10% 6% round ${r()})` },
+        {
+          clipPath: () => `inset(0% 0% 0% 0% round ${r()})`,
+          ease: 'none',
+          scrollTrigger: { trigger: media, start: 'top 95%', end: 'top 35%', scrub: true, invalidateOnRefresh: true },
+        }
+      );
+      gsap.fromTo(
+        '.about__img',
+        { yPercent: -6 },
+        { yPercent: 6, ease: 'none', scrollTrigger: { trigger: media, start: 'top bottom', end: 'bottom top', scrub: true } }
+      );
+    }
+
+    const code = $('.about__code');
+    if (code) {
+      const st = { trigger: code, start: 'top 92%', once: true };
+      gsap.from(code, { y: 60, autoAlpha: 0, rotate: 2, duration: 1.3, ease: 'expo.out', scrollTrigger: st });
+      gsap.from($$('.ln', code), {
+        autoAlpha: 0,
+        x: -12,
+        duration: 0.7,
+        delay: 0.3,
+        stagger: 0.07,
+        ease: 'power3.out',
+        scrollTrigger: { ...st },
+      });
+    }
+
+    $$('.title-pill').forEach((pill) => {
+      gsap.from(pill, {
+        scale: 0,
+        duration: 1.2,
+        delay: 0.2,
+        ease: 'expo.out',
+        scrollTrigger: { trigger: pill, start: 'top 90%', once: true },
+      });
+    });
   }
 
   function initHeroScroll() {
@@ -682,6 +733,7 @@
     initHeroScroll();
     initReveals();
     initScrubText();
+    initVisuals();
     initCounters();
 
     const mm = gsap.matchMedia();

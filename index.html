@@ -101,7 +101,7 @@
         </div>
 
         <h1 class="hero__title" aria-label="Shivdutt Karwa">
-          <span class="hero__line"><span class="hero__word" data-hero-chars>Shivdutt</span></span>
+          <span class="hero__line"><span class="hero__word" data-hero-chars>Shivdutt</span><span class="hero__pill" aria-hidden="true"><img src="assets/img/portrait.webp" alt="" width="1254" height="1254" fetchpriority="high" decoding="async"></span></span>
           <span class="hero__line hero__line--2">
             <span class="hero__badge" aria-hidden="true">
               <svg class="hero__badge-ring" viewBox="0 0 120 120">
@@ -128,21 +128,11 @@
 
           <a href="#about" class="hero__scroll" data-hero-fade><span class="hero__mouse"><i></i></span>Scroll to explore</a>
 
-          <div class="hero__card-wrap">
-            <figure class="code-card" aria-label="A code snippet describing Shivdutt as a developer">
-              <div class="code-card__bar"><span></span><span></span><span></span><em>developer.ts</em></div>
-              <code class="code-card__body">
-                <span class="ln"><span class="k">const</span> <span class="v">developer</span> = {</span>
-                <span class="ln">  name: <span class="s">"Shivdutt Karwa"</span>,</span>
-                <span class="ln">  role: <span class="s">"Full Stack Developer"</span>,</span>
-                <span class="ln">  stack: [<span class="s">"React"</span>, <span class="s">"Node"</span>, <span class="s">"Django"</span>],</span>
-                <span class="ln">  focus: <span class="s">"performance + craft"</span>,</span>
-                <span class="ln">  available: <span class="n">true</span>,</span>
-                <span class="ln">};</span>
-                <span class="ln"><span class="f">ship</span>(developer);<span class="caret"></span></span>
-              </code>
-            </figure>
-          </div>
+          <nav class="hero__social" aria-label="Social" data-hero-fade>
+            <a href="https://github.com/shivduttkarwa" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:hello@shivduttkarwa.com">Email</a>
+          </nav>
         </div>
       </div>
     </section>
@@ -174,6 +164,25 @@
       <div class="container">
         <div class="sec-label" data-reveal><span>(01)</span> About me</div>
         <p class="about__statement" data-scrub-words>I'm Shivdutt — a full stack developer who turns ambitious ideas into <em>fast,</em> accessible and <em>beautifully engineered</em> web products. I own the entire stack, from database schemas and APIs to the last pixel and micro-interaction.</p>
+
+        <div class="about__visual">
+          <div class="about__media">
+            <img class="about__img" src="assets/img/about-studio.webp" alt="Shivdutt Karwa at his workstation in a dark, warmly lit studio" width="1672" height="940" loading="lazy" decoding="async">
+          </div>
+          <figure class="code-card about__code" aria-label="A code snippet describing Shivdutt as a developer">
+            <div class="code-card__bar"><span></span><span></span><span></span><em>developer.ts</em></div>
+            <code class="code-card__body">
+              <span class="ln"><span class="k">const</span> <span class="v">developer</span> = {</span>
+              <span class="ln">  name: <span class="s">"Shivdutt Karwa"</span>,</span>
+              <span class="ln">  role: <span class="s">"Full Stack Developer"</span>,</span>
+              <span class="ln">  stack: [<span class="s">"React"</span>, <span class="s">"Node"</span>, <span class="s">"Django"</span>],</span>
+              <span class="ln">  focus: <span class="s">"performance + craft"</span>,</span>
+              <span class="ln">  available: <span class="n">true</span>,</span>
+              <span class="ln">};</span>
+              <span class="ln"><span class="f">ship</span>(developer);<span class="caret"></span></span>
+            </code>
+          </figure>
+        </div>
 
         <div class="about__grid">
           <div class="about__col">
@@ -230,7 +239,7 @@
             <article class="service" style="--i:0">
               <div class="service__side">
                 <span class="service__num">01</span>
-                <svg class="service__icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="10" width="52" height="42" rx="7"/><path d="M6 21h52"/><circle cx="13" cy="15.5" r="1.2"/><circle cx="18" cy="15.5" r="1.2"/><path d="M25 32l-6 6 6 6M39 32l6 6-6 6M34.5 29l-5 18"/></svg>
+                <figure class="service__media"><img src="assets/img/service-frontend.webp" alt="A dark desk setup with two monitors overlooking a city at dusk" width="1200" height="675" loading="lazy" decoding="async"></figure>
                 <h3 class="service__title">Frontend<br>Engineering</h3>
               </div>
               <div class="service__body">
@@ -248,7 +257,7 @@
             <article class="service" style="--i:1">
               <div class="service__side">
                 <span class="service__num">02</span>
-                <svg class="service__icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="48" height="14" rx="4"/><rect x="8" y="25" width="48" height="14" rx="4"/><rect x="8" y="42" width="48" height="14" rx="4"/><path d="M16 15h.01M16 32h.01M16 49h.01M24 15h8M24 32h8M24 49h8"/></svg>
+                <figure class="service__media"><img src="assets/img/service-backend.webp" alt="Close-up of code on a laptop screen" width="1200" height="800" loading="lazy" decoding="async"></figure>
                 <h3 class="service__title">Backend<br>&amp; APIs</h3>
               </div>
               <div class="service__body">
@@ -266,7 +275,7 @@
             <article class="service" style="--i:2">
               <div class="service__side">
                 <span class="service__num">03</span>
-                <svg class="service__icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="7" y="7" width="50" height="50" rx="7"/><path d="M7 21h50M25 21v36"/><path d="M32 32h18M32 40h12M13 30h6M13 37h6"/></svg>
+                <figure class="service__media"><img src="assets/img/service-commerce.webp" alt="A website theme layout displayed on a monitor" width="1200" height="800" loading="lazy" decoding="async"></figure>
                 <h3 class="service__title">CMS &amp;<br>E-commerce</h3>
               </div>
               <div class="service__body">
@@ -284,7 +293,7 @@
             <article class="service" style="--i:3">
               <div class="service__side">
                 <span class="service__num">04</span>
-                <svg class="service__icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M21 22c-6 0-11 4.5-11 10s5 10 11 10c9 0 13-20 22-20 6 0 11 4.5 11 10s-5 10-11 10c-9 0-13-20-22-20z"/></svg>
+                <figure class="service__media"><img src="assets/img/service-devops.webp" alt="A performance analytics dashboard on a tablet" width="1200" height="800" loading="lazy" decoding="async"></figure>
                 <h3 class="service__title">DevOps &amp;<br>Performance</h3>
               </div>
               <div class="service__body">
@@ -328,7 +337,7 @@
                         <span class="project__ph-name">Real Gold<br><em>Properties</em></span>
                         <span class="project__ph-url">realgoldproperties.com.au</span>
                       </div>
-                      <img class="project__img" src="assets/img/work/real-gold-properties.jpg" alt="Real Gold Properties website" loading="lazy" decoding="async">
+                      <img class="project__img" src="assets/img/work/real-gold-properties.webp" alt="Real Gold Properties website" loading="lazy" decoding="async">
                     </div>
                     <span class="project__chip">Real estate</span>
                   </div>
@@ -352,7 +361,7 @@
                         <span class="project__ph-name">Luméa<br><em>Skincare</em></span>
                         <span class="project__ph-url">WooCommerce store</span>
                       </div>
-                      <img class="project__img" src="assets/img/work/lumea.jpg" alt="Luméa skincare online store" loading="lazy" decoding="async">
+                      <img class="project__img" src="assets/img/work/lumea.webp" alt="Luméa skincare online store" loading="lazy" decoding="async">
                     </div>
                     <span class="project__chip">E-commerce</span>
                   </div>
@@ -376,7 +385,7 @@
                         <span class="project__ph-name">Mira<br><em>Holt</em></span>
                         <span class="project__ph-url">Photographer · Brisbane</span>
                       </div>
-                      <img class="project__img" src="assets/img/work/mira-holt.jpg" alt="Mira Holt photography portfolio" loading="lazy" decoding="async">
+                      <img class="project__img" src="assets/img/work/mira-holt.webp" alt="Mira Holt photography portfolio" loading="lazy" decoding="async">
                     </div>
                     <span class="project__chip">Portfolio</span>
                   </div>
@@ -400,7 +409,7 @@
                         <span class="project__ph-name">Nomad<br><em>&amp; Nest</em></span>
                         <span class="project__ph-url">Journeys designed around you</span>
                       </div>
-                      <img class="project__img" src="assets/img/work/nomad-nest.jpg" alt="Nomad and Nest travel website" loading="lazy" decoding="async">
+                      <img class="project__img" src="assets/img/work/nomad-nest.webp" alt="Nomad and Nest travel website" loading="lazy" decoding="async">
                     </div>
                     <span class="project__chip">Travel</span>
                   </div>
@@ -424,7 +433,7 @@
                         <span class="project__ph-name">Wing<em>span</em></span>
                         <span class="project__ph-url">Travel more, celebrate life</span>
                       </div>
-                      <img class="project__img" src="assets/img/work/wingspan.jpg" alt="Wingspan tour packages website" loading="lazy" decoding="async">
+                      <img class="project__img" src="assets/img/work/wingspan.webp" alt="Wingspan tour packages website" loading="lazy" decoding="async">
                     </div>
                     <span class="project__chip">Travel</span>
                   </div>
@@ -604,7 +613,7 @@
       <section class="contact section" id="contact">
         <div class="container">
           <div class="sec-label" data-reveal><span>(07)</span> Contact</div>
-          <h2 class="contact__title" data-split>Let's build something <em>great</em> together.</h2>
+          <h2 class="contact__title" data-split>Let's build <span class="title-pill" aria-hidden="true"><img src="assets/img/portrait.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async"></span> something <em>great</em> together.</h2>
 
           <div class="contact__grid">
             <div class="contact__info">
